@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const {message} = require('./src/message');
+const {message} = require('./message');
 
 app.get('/message', (req, res) => {
     message()
