@@ -33,12 +33,13 @@ const authenticationMiddleware = (req, res, next) => {
 
 app.post('/graphql', authenticationMiddleware, (req, res) => {
     res.send({
-    status: 'ok'
+        status: 'ok'
     }); 
 });
 
 app.post('/graphql/public', (req,res) => {
-    const { body } = req;
+    const { user, pass } = req.body;
+    
     if (user === "Gogu" && pass === "P@rOLA") {
         jwt.sign({}, config.secretKey, (err, token) => {
             res.send({
