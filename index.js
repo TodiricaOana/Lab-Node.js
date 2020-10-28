@@ -31,7 +31,7 @@ const authenticationMiddleware = (req, res, next) => {
     });
 }
 
-app.post('/grapfql', authenticationMiddleware, (req, res) => {
+app.post('/graphql', authenticationMiddleware, (req, res) => {
     res.send({
     status: 'ok'
     }); 
